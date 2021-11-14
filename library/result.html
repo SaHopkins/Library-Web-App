@@ -1,0 +1,43 @@
+<html>
+<!DOCTYPE html>
+<?php
+require_once("pdoconfig.php");
+require_once("init.php");
+
+/*  Debug
+$statement = $conn->query("SELECT name FROM books");
+
+while ($row = $statement->fetch()) {
+  echo $row['name'] . "</br>";
+}
+*/
+?>
+  <head>
+    <meta charset="utf-8">
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+  </head>
+  <body>
+    <nav>
+        <div id="logo">
+            <h3>College</h3>
+        </div>
+        <ul>
+            <li>Catalogue</li>
+            <li class="login">Log in</li>
+        </ul>
+    </nav>
+    <div class="contents">
+      <div class="selected"></div>
+    </div>
+  </body>
+</html>
+
+<?php
+$statement = $conn->query("SELECT name FROM books");
+
+while ($row = $statement->fetch()) {
+  echo $row['name'] . "</br>";
+}
+
+?>
